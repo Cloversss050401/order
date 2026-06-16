@@ -187,7 +187,7 @@
             color: #666;
             font-size: 0.9em;
             margin-bottom: 15px;
-            min-height: 36px;
+            min-height: 24px;
         }
 
         .dish-more-btn {
@@ -1087,7 +1087,7 @@
                     <div class="dish-icon">${getCategoryIcon(dish.category)}</div>
                     <div class="dish-name">${dish.name}</div>
                     <div class="dish-category">${dish.category}</div>
-                    ${dish.note ? `<div class="dish-note">${dish.note}</div>` : ''}
+                    <div class="dish-note">${dish.note || ''}</div>
                     <button class="select-btn ${isSelected(dish.id) ? 'selected' : 'unselected'}" onclick="toggleSelectDish(${dish.id})">
                         ${isSelected(dish.id) ? '✓ 已选择' : '选择'}
                     </button>
