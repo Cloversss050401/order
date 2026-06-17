@@ -803,22 +803,27 @@
                 dishes = JSON.parse(savedDishes);
             } else {
                 dishes = [
-                    { id: 1, name: '红烧肉', category: '热菜', note: '肥而不腻' },
-                    { id: 2, name: '宫保鸡丁', category: '热菜', note: '微辣' },
+                    { id: 1, name: '红烧排骨', category: '热菜', note: '肥而不腻' },
+                    { id: 2, name: '土豆烧肉', category: '热菜', note: '不辣' },
                     { id: 3, name: '凉拌黄瓜', category: '凉菜', note: '清爽开胃' },
-                    { id: 4, name: '西红柿蛋汤', category: '汤品', note: '家常口味' },
-                    { id: 5, name: '蛋炒饭', category: '主食', note: '粒粒分明' },
-                    { id: 6, name: '麻婆豆腐', category: '热菜', note: '麻辣鲜香' },
-                    { id: 7, name: '蒜蓉西兰花', category: '热菜', note: '清淡' },
-                    { id: 8, name: '可乐鸡翅', category: '热菜', note: '甜香' },
-                    { id: 9, name: '凉拌木耳', category: '凉菜', note: '脆爽' },
-                    { id: 10, name: '酸辣汤', category: '汤品', note: '酸辣开胃' },
-                    { id: 11, name: '馒头', category: '主食', note: '' },
-                    { id: 12, name: '米饭', category: '主食', note: '' },
-                    { id: 13, name: '酸奶', category: '饮料', note: '原味' },
-                    { id: 14, name: '果汁', category: '饮料', note: '橙汁' },
-                    { id: 15, name: '水果沙拉', category: '甜品', note: '新鲜水果' },
-                    { id: 16, name: '焦糖布丁', category: '甜品', note: '香甜嫩滑' }
+                    { id: 4, name: '西红柿炒蛋', category: '热菜', note: '酸甜可口' },
+                    { id: 5, name: '鲜菇汤', category: '汤品', note: '鲜美' },
+                    { id: 6, name: '香喷喷大米饭', category: '主食', note: '' },
+                    { id: 7, name: '干子炒榨菜', category: '热菜', note: '好吃' },
+                    { id: 8, name: '凉拌皮蛋', category: '凉菜', note: '清淡健康' },
+                    { id: 9, name: '喜头鱼汤', category: '汤品', note: '鲜' },
+                    { id: 10, name: '馒头', category: '主食', note: '' },
+                    { id: 11, name: '水煮肉片', category: '热菜', note: '麻辣鲜嫩' },
+                    { id: 12, name: '蛋糕', category: '甜品', note: '香甜软糯' },
+                    { id: 13, name: '可乐', category: '饮料', note: '冰镇' },
+                    { id: 14, name: '雪碧', category: '饮料', note: '冰镇' },
+                    { id: 15, name: '黄瓜炒火腿肠', category: '热菜', note: '' },
+                    { id: 16, name: '青椒炒牛肉', category: '热菜', note: '' },
+                    { id: 17, name: '青椒鸡蛋饼', category: '热菜', note: '' },
+                    { id: 18, name: '手抓饼', category: '主食', note: '' },
+                    { id: 19, name: '青椒鸡蛋炒火腿肠', category: '热菜', note: '' },
+                    { id: 20, name: 'MM美味山姆烤鸡', category: '热菜', note: '' },
+                    { id: 21, name: '鲜牛奶', category: '饮料', note: '' }
                 ];
                 saveData();
             }
@@ -859,8 +864,9 @@
                 return;
             }
 
+            const maxId = dishes.length > 0 ? Math.max(...dishes.map(d => d.id)) : 0;
             const dish = {
-                id: Date.now(),
+                id: maxId + 1,
                 name: name,
                 category: category,
                 note: note
